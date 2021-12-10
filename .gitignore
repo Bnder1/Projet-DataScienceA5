@@ -7,6 +7,8 @@ __pycache__/
 .ipynb_checkpoints*
 *.env
 Makefile
+configuration.py
+dockerfile
 
 # C extensions
 *.so
