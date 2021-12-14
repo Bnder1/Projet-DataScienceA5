@@ -123,3 +123,6 @@ dmypy.json
 datasets/.gitkeep
 *.jpg
 *.png
+
+#logs folder
+logs/
