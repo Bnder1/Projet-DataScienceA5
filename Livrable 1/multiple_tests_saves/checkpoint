@@ -1,0 +1,2 @@
+model_checkpoint_path: "epochs=1-conv_nb=8-dropout=0.0-last_layer_nb=32-optimizer=adam-accuracy=0.6298756003379822.ckpt"
+all_model_checkpoint_paths: "epochs=1-conv_nb=8-dropout=0.0-last_layer_nb=32-optimizer=adam-accuracy=0.6298756003379822.ckpt"
