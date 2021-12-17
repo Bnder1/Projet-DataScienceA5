@@ -121,8 +121,8 @@ dmypy.json
 .pyre/
 .DS_Store
 datasets/.gitkeep
-datasets/*.jpg
-datasets/*.png
+datasets/*/*.jpg
+datasets/*/*.png
 
 #logs folder
 logs/
