@@ -1,0 +1,2 @@
+model_checkpoint_path: "cp_multiple_layers_03-0.86.ckpt"
+all_model_checkpoint_paths: "cp_multiple_layers_03-0.86.ckpt"
