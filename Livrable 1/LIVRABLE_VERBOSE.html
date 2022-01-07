@@ -14883,7 +14883,7 @@ A la fin de l'entrainement, nous sauvegardons le modèle final</p>
 
 <span class="n">Test</span> <span class="nl">accuracy:</span> <span class="mf">0.8403924703598022</span>
 </pre></div>
-<h4 id="Matrice-de-confusion">Matrice de confusion<a class="anchor-link" href="#Matrice-de-confusion">&#182;</a></h4><p><img src="image/ConfusionSingle.png" alt="Confusion Single"></p>
+<h4 id="Matrice-de-confusion">Matrice de confusion<a class="anchor-link" href="#Matrice-de-confusion">&#182;</a></h4><p><img src="image/ConfuSingle.png" alt="Confusion Single"></p>
 <p>La matrice de confusion nous montre un apercu des vrais positifs, vrais négatifs, faux positifs et faux négatifs.
 Pour ce modèle Nous avons donc pour les classes :</p>
 <ul>
@@ -14963,13 +14963,15 @@ valeurs initiales des poids de connexions, etc.).</p>
 <li>Drop out : Pendant l'entrainement, un pourcentage de neurones (définit en paramètre) est ignoré. Cela permet d'éviter l'Overfitting car on force le model à d'adapter à différents scénarios.</li>
 <li>Data augmentation : La data augmentation est une technique de création de data basé sur des data existantes. Par exemple, lorsque du'une est classe est en sous-nombre on souhaite rajouté des data de appartenant à cette classe pour éviter d'avoir des biais dans l'apprentissage. Pour des photos, il suffit de la retourner, zoomer/dézoomer ou encore rajouter du bruit à partir d'une photo existante pour créer de nouvelles photos.</li>
 <li>Régularisation L1/L2 : La régularisation L1/L2 est associé à une réduction des poids. En effet, pour eviter qu'un poid deviennent trop important et ai trop d'influence sur la sortie du modèle, on a décidé de le réduire.
-La L1-Regularization la somme des poids en valeur absolue multiplié par une constante α
-La L2-Regularization la somme des poids au carré multiplié par une constante α
+La L1-Regularization réalise la somme des poids en valeur absolue multiplié par une constante α.
+La L2-Regularization est la somme des poids au carré multiplié par une constante α.
 Concretement, la L1-Regularization permet d’effectuer une feature selection plus précise (trouver des sous-ensembles de données pertinents) alors que la L2-Regularization permet d’effectuer un apprentissage plus rapide. Cependant, il est possible d'utiliser les deux en même temps.</li>
 </ul>
 <p>Nous aurions pu utiliser d'autres techniques de régularisation pour améliorer notre modèle. Nous avons favorisé Drop Out ayant des résultats plus pertinent.</p>
-<p><a href="https://www.tensorflow.org/api_docs/python/tf/keras/optimizers">Liste optimizer :</a>:</p>
-<h2 id="Determination-du-meilleur-mod%C3%A8le">Determination du meilleur mod&#232;le<a class="anchor-link" href="#Determination-du-meilleur-mod%C3%A8le">&#182;</a></h2><p>Afin de determiner le modèle le plus précis, nous avons choisis cinq paramètres avec différentes entrées et testé toutes les combinaisons possibles.</p>
+
+<h2 id="Determination-du-meilleur-mod%C3%A8le">Determination du meilleur mod&#232;le<a class="anchor-link" href="#Determination-du-meilleur-mod%C3%A8le">&#182;</a></h2><p>Afin de determiner le modèle le plus précis, nous avons choisis cinq paramètres avec différentes entrées et testé toutes les combinaisons possibles. <br>
+Nous voulons déterminer le modèle le plus performant, afin de d'identifier les images parmi les 5 classes fournit.
+</p>
 <ul>
 <li>class Adam: Optimiseur qui implémente l'algorithme Adam.</li>
 <li>class Adamax: Optimiseur qui implémente l'algorithme Adamax.</li>
@@ -15073,27 +15075,6 @@ Concretement, la L1-Regularization permet d’effectuer une feature selection pl
 Il est donc préferable de favoriser ce modèle car il diminue les chances d'overfitting et donc d'erreurs lors de la mise en production.</p>
 
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span> 
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
 </div>
 </body>
-
-
-
-
-
-
-
 </html>
