@@ -14751,6 +14751,7 @@ Voici le code de notre premier modèle :</p>
 </li>
 </ul>
 <p><img src="image/model_single.png" alt="modelsinglepng"></p>
+
 <h4 id="Mod%C3%A8le-2-(Multiple-Layer-CNN)">Mod&#232;le 2 (Multiple Layer CNN)<a class="anchor-link" href="#Mod%C3%A8le-2-(Multiple-Layer-CNN)">&#182;</a></h4><p>Voici le code de notre second modèle :</p>
 <div class="highlight"><pre><span></span><span class="n">num_classes</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">class_names</span><span class="p">)</span>
 <span class="n">data_augmentation</span> <span class="o">=</span> <span class="n">keras</span><span class="o">.</span><span class="n">Sequential</span><span class="p">(</span>
@@ -14834,6 +14835,7 @@ Voici le code de notre premier modèle :</p>
 <span class="n">Non</span><span class="o">-</span><span class="n">trainable</span> <span class="nl">params:</span> <span class="mh">0</span>
 <span class="n">_________________________________________________________________</span>
 </pre></div>
+
 <p>Dans un second temps notre équipe de projet à donc réalisé un second modèle. Le premier modèle n'avait pas les performances escomptées.</p>
 <p>Nous sommes donc partie sur la base du premier modèle, en lui rajoutant 2 couche de convolution supplémentaire.</p>
 <p>Les couches <em>Dense</em> apprennent en <strong>observant</strong> une image, une donnée, <strong>dans sa totalité</strong></p>
@@ -14868,10 +14870,56 @@ A la fin de l'entrainement, nous sauvegardons le modèle final</p>
 <span class="n">model_single_layer</span><span class="o">.</span><span class="n">save_weights</span><span class="p">(</span><span class="n">save_path</span><span class="p">)</span>
 </pre></div>
 <h2 id="Analyse-des-performances-et-des-param%C3%A8tres-de-nos-mod%C3%A8les">Analyse des performances et des param&#232;tres de nos mod&#232;les<a class="anchor-link" href="#Analyse-des-performances-et-des-param%C3%A8tres-de-nos-mod%C3%A8les">&#182;</a></h2><h3 id="Mod%C3%A8le-1-(Single-layers-CNN)">Mod&#232;le 1 (Single layers CNN)<a class="anchor-link" href="#Mod%C3%A8le-1-(Single-layers-CNN)">&#182;</a></h3><h4 id="Loss-et-accuracy">Loss et accuracy<a class="anchor-link" href="#Loss-et-accuracy">&#182;</a></h4><p><img src="image/Single.png" alt="Graph Single"></p>
+<p>
+  Epoch 1/10
+647/647 [==============================] - ETA: 0s - loss: 0.4439 - accuracy: 0.7667<br>
+2022-01-11 14:58:27.212545: W tensorflow/core/lib/png/png_io.cc:88] PNG warning: iCCP: known incorrect sRGB profile<br>
+Corrupt JPEG data: 419 extraneous bytes before marker 0xd9<br>
+
+Epoch 00001: val_accuracy improved from -inf to 0.80413, saving model to training/cp_single_layer_01-0.80.ckpt<br>
+647/647 [==============================] - 103s 55ms/step - loss: 0.4439 - accuracy: 0.7667 - val_loss: 0.3655 - val_accuracy: 0.8041<br>
+
+Epoch 2/10<br>
+644/647 [============================>.] - ETA: 0s - loss: 0.3529 - accuracy: 0.8151<br>
+Epoch 00002: val_accuracy improved from 0.80413 to 0.81198, saving model to training/cp_single_layer_02-0.81.ckpt<br>
+647/647 [==============================] - 10s 16ms/step - loss: 0.3529 - accuracy: 0.8151 - val_loss: 0.3422 - val_accuracy: 0.8120<br>
+Epoch 3/10
+645/647 [============================>.] - ETA: 0s - loss: 0.3307 - accuracy: 0.8293<br>
+Epoch 00003: val_accuracy improved from 0.81198 to 0.83021, saving model to training/cp_single_layer_03-0.83.ckpt<br>
+647/647 [==============================] - 10s 16ms/step - loss: 0.3306 - accuracy: 0.8293 - val_loss: 0.3404 - val_accuracy: 0.8302<br>
+Epoch 4/10<br>
+645/647 [============================>.] - ETA: 0s - loss: 0.3246 - accuracy: 0.8361<br>
+Epoch 00004: val_accuracy improved from 0.83021 to 0.83613, saving model to training/cp_single_layer_04-0.84.ckpt<br>
+647/647 [==============================] - 10s 16ms/step - loss: 0.3245 - accuracy: 0.8362 - val_loss: 0.3498 - val_accuracy: 0.8361<br>
+Epoch 5/10<br>
+645/647 [============================>.] - ETA: 0s - loss: 0.3085 - accuracy: 0.8506<br>
+Epoch 00005: val_accuracy improved from 0.83613 to 0.84784, saving model to training/cp_single_layer_05-0.85.ckpt<br>
+647/647 [==============================] - 10s 16ms/step - loss: 0.3086 - accuracy: 0.8505 - val_loss: 0.3061 - val_accuracy: 0.8478<br>
+Epoch 6/10<br>
+645/647 [============================>.] - ETA: 0s - loss: 0.3048 - accuracy: 0.8499<br>
+Epoch 00006: val_accuracy improved from 0.84784 to 0.85388, saving model to training/cp_single_layer_06-0.85.ckpt<br>
+647/647 [==============================] - 10s 16ms/step - loss: 0.3048 - accuracy: 0.8500 - val_loss: 0.3040 - val_accuracy: 0.8539<br>
+Epoch 7/10<br>
+645/647 [============================>.] - ETA: 0s - loss: 0.2882 - accuracy: 0.8611<br>
+Epoch 00007: val_accuracy improved from 0.85388 to 0.85521, saving model to training/cp_single_layer_07-0.86.ckpt<br>
+647/647 [==============================] - 10s 16ms/step - loss: 0.2883 - accuracy: 0.8610 - val_loss: 0.2941 - val_accuracy: 0.8552<br>
+Epoch 8/10<br>
+644/647 [============================>.] - ETA: 0s - loss: 0.2798 - accuracy: 0.8678<br>
+Epoch 00008: val_accuracy did not improve from 0.85521<br>
+647/647 [==============================] - 10s 16ms/step - loss: 0.2800 - accuracy: 0.8678 - val_loss: 0.3562 - val_accuracy: 0.8552<br>
+Epoch 9/10<br>
+645/647 [============================>.] - ETA: 0s - loss: 0.2831 - accuracy: 0.8663<br>
+Epoch 00009: val_accuracy improved from 0.85521 to 0.86886, saving model to training/cp_single_layer_09-0.87.ckpt<br>
+647/647 [==============================] - 10s 16ms/step - loss: 0.2831 - accuracy: 0.8663 - val_loss: 0.2855 - val_accuracy: 0.8689<br>
+Epoch 10/10<br>
+645/647 [============================>.] - ETA: 0s - loss: 0.2743 - accuracy: 0.8738<br>
+Epoch 00010: val_accuracy did not improve from 0.86886<br>
+647/647 [==============================] - 10s 16ms/step - loss: 0.2742 - accuracy: 0.8739 - val_loss: 0.2925 - val_accuracy: 0.8649<br>
+</p>
 <p>Voici nos graphiques d'accuracy et de loss au cours des épochs. Ce modèle atteint donc :</p>
 <ul>
-<li>En training : - loss: 0.3095 - accuracy: 0.8430 </li>
-<li>En validation : - val_loss: 0.3259 - val_accuracy: 0.8404</li>
+<li>En training : - loss: 0.2742 - accuracy: 0.8739</li>
+<li>En validation : - val_loss: 0.2925 - val_accuracy: 0.8649</li>
 </ul>
 <h4 id="Les-param%C3%A8tres">Les param&#232;tres<a class="anchor-link" href="#Les-param%C3%A8tres">&#182;</a></h4><p>Le batch size = 32</p>
 <p>Ce batch size à été selectionné de façon à optimiser les performances de l'apprentissage.</p>
@@ -14902,10 +14950,52 @@ Pour ce modèle Nous avons donc pour les classes :</p>
 </pre></div>
 <h4 id="Exemple-d'erreurs-de-notre-mod%C3%A8le">Exemple d'erreurs de notre mod&#232;le<a class="anchor-link" href="#Exemple-d'erreurs-de-notre-mod%C3%A8le">&#182;</a></h4><p><img src="image/errors_example.png" alt="errorsexamplepng"></p>
 <h3 id="Mod%C3%A8le-2-(Multiple-Layer-CNN)">Mod&#232;le 2 (Multiple Layer CNN)<a class="anchor-link" href="#Mod%C3%A8le-2-(Multiple-Layer-CNN)">&#182;</a></h3><h4 id="Loss-et-Accuracy">Loss et Accuracy<a class="anchor-link" href="#Loss-et-Accuracy">&#182;</a></h4><p><img src="image/multi.png" alt="Graph Multi"></p>
+<p>
+  Epoch 1/10<br>
+646/647 [============================>.] - ETA: 0s - loss: 0.3737 - accuracy: 0.7987<br>
+Epoch 00001: val_accuracy improved from -inf to 0.83251, saving model to training/cp_multiple_layers_01-0.83.ckpt<br>
+647/647 [==============================] - 16s 23ms/step - loss: 0.3735 - accuracy: 0.7988 - val_loss: 0.3225 - val_accuracy: 0.8325<br>
+Epoch 2/10<br>
+646/647 [============================>.] - ETA: 0s - loss: 0.3121 - accuracy: 0.8472<br>
+Epoch 00002: val_accuracy improved from 0.83251 to 0.86741, saving model to training/cp_multiple_layers_02-0.87.ckpt<br>
+647/647 [==============================] - 14s 22ms/step - loss: 0.3120 - accuracy: 0.8472 - val_loss: 0.2790 - val_accuracy: 0.8674<br>
+Epoch 3/10<br>
+646/647 [============================>.] - ETA: 0s - loss: 0.2811 - accuracy: 0.8692<br>
+Epoch 00003: val_accuracy improved from 0.86741 to 0.87175, saving model to training/cp_multiple_layers_03-0.87.ckpt<br>
+647/647 [==============================] - 14s 22ms/step - loss: 0.2811 - accuracy: 0.8692 - val_loss: 0.2852 - val_accuracy: 0.8718<br>
+Epoch 4/10<br>
+646/647 [============================>.] - ETA: 0s - loss: 0.2694 - accuracy: 0.8774<br>
+Epoch 00004: val_accuracy improved from 0.87175 to 0.87502, saving model to training/cp_multiple_layers_04-0.88.ckpt<br>
+647/647 [==============================] - 15s 22ms/step - loss: 0.2692 - accuracy: 0.8775 - val_loss: 0.2793 - val_accuracy: 0.8750<br>
+Epoch 5/10<br>
+646/647 [============================>.] - ETA: 0s - loss: 0.2494 - accuracy: 0.8855<br>
+Epoch 00005: val_accuracy improved from 0.87502 to 0.89446, saving model to training/cp_multiple_layers_05-0.89.ckpt<br>
+647/647 [==============================] - 14s 22ms/step - loss: 0.2495 - accuracy: 0.8854 - val_loss: 0.2436 - val_accuracy: 0.8945<br>
+Epoch 6/10<br>
+646/647 [============================>.] - ETA: 0s - loss: 0.2387 - accuracy: 0.8945<br>
+Epoch 00006: val_accuracy improved from 0.89446 to 0.89760, saving model to training/cp_multiple_layers_06-0.90.ckpt<br>
+647/647 [==============================] - 14s 22ms/step - loss: 0.2388 - accuracy: 0.8944 - val_loss: 0.2350 - val_accuracy: 0.8976<br>
+Epoch 7/10<br>
+646/647 [============================>.] - ETA: 0s - loss: 0.2234 - accuracy: 0.9056<br>
+Epoch 00007: val_accuracy did not improve from 0.89760<br>
+647/647 [==============================] - 14s 22ms/step - loss: 0.2231 - accuracy: 0.9057 - val_loss: 0.2561 - val_accuracy: 0.8850<br>
+Epoch 8/10<br>
+646/647 [============================>.] - ETA: 0s - loss: 0.2166 - accuracy: 0.9075<br>
+Epoch 00008: val_accuracy improved from 0.89760 to 0.90653, saving model to training/cp_multiple_layers_08-0.91.ckpt<br>
+647/647 [==============================] - 14s 22ms/step - loss: 0.2165 - accuracy: 0.9075 - val_loss: 0.2271 - val_accuracy: 0.9065<br>
+Epoch 9/10<br>
+646/647 [============================>.] - ETA: 0s - loss: 0.2124 - accuracy: 0.9094<br>
+Epoch 00009: val_accuracy did not improve from 0.90653<br>
+647/647 [==============================] - 14s 22ms/step - loss: 0.2124 - accuracy: 0.9094 - val_loss: 0.2291 - val_accuracy: 0.9056<br>
+Epoch 10/10<br>
+646/647 [============================>.] - ETA: 0s - loss: 0.2028 - accuracy: 0.9134<br>
+Epoch 00010: val_accuracy improved from 0.90653 to 0.91064, saving model to training/cp_multiple_layers_10-0.91.ckpt<br>
+647/647 [==============================] - 14s 22ms/step - loss: 0.2028 - accuracy: 0.9133 - val_loss: 0.2147 - val_accuracy: 0.9106<br>
+</p>
 <p>Voici nos graphique d'accuracy et de loss au cours des epochs. Ce modèle atteint donc :</p>
 <ul>
-<li>En training : - loss: 0.2850 - accuracy: 0.8616 </li>
-<li>En validation : - val_loss: 0.2944 - val_accuracy: 0.8550</li>
+<li>En training : - loss: 0.2028 - accuracy: 0.9133 </li>
+<li>En validation : - val_loss: 0.2147 - val_accuracy: 0.9106</li>
 </ul>
 <p>Nous constatons que ce modèle à de meilleurs performances que le premier modèle dues aux couches de convolution supplémentaire.</p>
 <p><u><strong>Test de l'accuracy :</strong></u></p>
