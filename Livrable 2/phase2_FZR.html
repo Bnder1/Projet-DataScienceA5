@@ -4980,7 +4980,7 @@ form{
   .bp3-running-text table th, table.bp3-html-table th{
     color:#182026;
     font-weight:600; }
-  
+
   .bp3-running-text table td,
   table.bp3-html-table td{
     color:#182026; }
@@ -14499,12 +14499,12 @@ a.anchor-link {
                 },
                 displayAlign: 'center',
                 CommonHTML: {
-                    linebreaks: { 
-                    automatic: true 
+                    linebreaks: {
+                    automatic: true
                     }
                 }
             });
-        
+
             MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
         }
     }
@@ -14636,7 +14636,7 @@ Nous chargeons seulement 200 éléments dans le dataset pour permettre une execu
     <span class="n">clean_img</span><span class="o">=</span><span class="n">cv2</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">data_dir</span><span class="o">+</span><span class="s2">&quot;/clean&quot;</span><span class="p">,</span><span class="n">file</span><span class="p">))</span>
     <span class="n">clean_img</span><span class="o">=</span><span class="n">cv2</span><span class="o">.</span><span class="n">resize</span><span class="p">(</span><span class="n">clean_img</span><span class="p">,</span> <span class="p">(</span><span class="n">image_h</span><span class="p">,</span> <span class="n">image_w</span><span class="p">))</span>
     <span class="n">clean_img</span><span class="o">=</span><span class="n">clean_img</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s1">&#39;float32&#39;</span><span class="p">)</span> <span class="o">/</span> <span class="mf">255.</span>
-    
+
     <span class="n">noisy_img</span><span class="o">=</span><span class="n">cv2</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">data_dir</span><span class="o">+</span><span class="s2">&quot;/noise&quot;</span><span class="p">,</span><span class="n">file</span><span class="p">))</span>
     <span class="n">noisy_img</span><span class="o">=</span><span class="n">cv2</span><span class="o">.</span><span class="n">resize</span><span class="p">(</span><span class="n">noisy_img</span><span class="p">,</span> <span class="p">(</span><span class="n">image_h</span><span class="p">,</span> <span class="n">image_w</span><span class="p">))</span>
     <span class="n">noisy_img</span><span class="o">=</span><span class="n">noisy_img</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s1">&#39;float32&#39;</span><span class="p">)</span> <span class="o">/</span> <span class="mf">255.</span>
@@ -14666,7 +14666,7 @@ Nous chargeons seulement 200 éléments dans le dataset pour permettre une execu
 
 <div class="jp-OutputArea-child">
 
-    
+
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
@@ -14718,7 +14718,7 @@ Found 200 noisy files, 160 train / 40 test
 
 <div class="jp-OutputArea-child">
 
-    
+
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
@@ -14734,7 +14734,7 @@ Found 200 noisy files, 160 train / 40 test
 
 <div class="jp-OutputArea-child">
 
-    
+
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
@@ -14798,7 +14798,7 @@ Found 200 noisy files, 160 train / 40 test
         <span class="c1"># apply a CONV =&gt; MAX_POOLING</span>
         <span class="n">x</span> <span class="o">=</span> <span class="n">layers</span><span class="o">.</span><span class="n">Conv2D</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="n">activation</span><span class="o">=</span><span class="s1">&#39;relu&#39;</span><span class="p">,</span> <span class="n">padding</span><span class="o">=</span><span class="s2">&quot;same&quot;</span><span class="p">)(</span><span class="n">x</span><span class="p">)</span>
         <span class="n">x</span> <span class="o">=</span> <span class="n">layers</span><span class="o">.</span><span class="n">MaxPooling2D</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="n">padding</span><span class="o">=</span><span class="s1">&#39;same&#39;</span><span class="p">)(</span><span class="n">x</span><span class="p">)</span>
-        
+
     <span class="c1"># loop over our number of filters again, but this time in</span>
     <span class="c1"># reverse order</span>
     <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">filters</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]:</span>
@@ -14833,49 +14833,49 @@ Found 200 noisy files, 160 train / 40 test
 
 <div class="jp-OutputArea-child">
 
-    
+
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
 <pre>Model: &#34;autoencoder&#34;
 _________________________________________________________________
- Layer (type)                Output Shape              Param #   
+ Layer (type)                Output Shape              Param #
 =================================================================
- input_1 (InputLayer)        [(None, 304, 304, 3)]     0         
-                                                                 
- conv2d (Conv2D)             (None, 304, 304, 16)      448       
-                                                                 
- max_pooling2d (MaxPooling2D  (None, 152, 152, 16)     0         
- )                                                               
-                                                                 
- conv2d_1 (Conv2D)           (None, 152, 152, 32)      4640      
-                                                                 
- max_pooling2d_1 (MaxPooling  (None, 76, 76, 32)       0         
- 2D)                                                             
-                                                                 
- conv2d_2 (Conv2D)           (None, 76, 76, 64)        18496     
-                                                                 
- max_pooling2d_2 (MaxPooling  (None, 38, 38, 64)       0         
- 2D)                                                             
-                                                                 
- conv2d_3 (Conv2D)           (None, 38, 38, 64)        36928     
-                                                                 
- up_sampling2d (UpSampling2D  (None, 76, 76, 64)       0         
- )                                                               
-                                                                 
- conv2d_4 (Conv2D)           (None, 76, 76, 32)        18464     
-                                                                 
- up_sampling2d_1 (UpSampling  (None, 152, 152, 32)     0         
- 2D)                                                             
-                                                                 
- conv2d_5 (Conv2D)           (None, 152, 152, 16)      4624      
-                                                                 
- up_sampling2d_2 (UpSampling  (None, 304, 304, 16)     0         
- 2D)                                                             
-                                                                 
- conv2d_6 (Conv2D)           (None, 304, 304, 3)       435       
-                                                                 
+ input_1 (InputLayer)        [(None, 304, 304, 3)]     0
+
+ conv2d (Conv2D)             (None, 304, 304, 16)      448
+
+ max_pooling2d (MaxPooling2D  (None, 152, 152, 16)     0
+ )
+
+ conv2d_1 (Conv2D)           (None, 152, 152, 32)      4640
+
+ max_pooling2d_1 (MaxPooling  (None, 76, 76, 32)       0
+ 2D)
+
+ conv2d_2 (Conv2D)           (None, 76, 76, 64)        18496
+
+ max_pooling2d_2 (MaxPooling  (None, 38, 38, 64)       0
+ 2D)
+
+ conv2d_3 (Conv2D)           (None, 38, 38, 64)        36928
+
+ up_sampling2d (UpSampling2D  (None, 76, 76, 64)       0
+ )
+
+ conv2d_4 (Conv2D)           (None, 76, 76, 32)        18464
+
+ up_sampling2d_1 (UpSampling  (None, 152, 152, 32)     0
+ 2D)
+
+ conv2d_5 (Conv2D)           (None, 152, 152, 16)      4624
+
+ up_sampling2d_2 (UpSampling  (None, 304, 304, 16)     0
+ 2D)
+
+ conv2d_6 (Conv2D)           (None, 304, 304, 3)       435
+
 =================================================================
 Total params: 84,035
 Trainable params: 84,035
@@ -14960,7 +14960,7 @@ _________________________________________________________________
                           <span class="n">shuffle</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
                           <span class="n">validation_data</span><span class="o">=</span><span class="p">(</span><span class="n">tf</span><span class="o">.</span><span class="n">convert_to_tensor</span><span class="p">(</span><span class="n">noisy_test_set</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">tf</span><span class="o">.</span><span class="n">float32</span><span class="p">),</span> <span class="n">tf</span><span class="o">.</span><span class="n">convert_to_tensor</span><span class="p">(</span><span class="n">clean_test_set</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">tf</span><span class="o">.</span><span class="n">float32</span><span class="p">)),</span>
                           <span class="n">callbacks</span><span class="o">=</span><span class="p">[</span><span class="n">cp_callback</span><span class="p">,</span><span class="n">tensorboard_callback</span><span class="p">])</span>
- 
+
 
 <span class="c1"># Save the model</span>
 <span class="n">save_path</span> <span class="o">=</span> <span class="s2">&quot;checkpoints/autoencoder.h5&quot;</span>
@@ -14986,7 +14986,7 @@ _________________________________________________________________
 
 <div class="jp-OutputArea-child">
 
-    
+
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
@@ -15397,7 +15397,7 @@ Epoch 00100: val_loss did not improve from 0.32395
 
 <div class="jp-OutputArea-child">
 
-    
+
     <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[9]:</div>
 
 
@@ -15411,7 +15411,7 @@ Epoch 00100: val_loss did not improve from 0.32395
 
 <div class="jp-OutputArea-child">
 
-    
+
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
@@ -15499,7 +15499,7 @@ Epoch 00100: val_loss did not improve from 0.32395
 
 <div class="jp-OutputArea-child">
 
-    
+
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
@@ -15515,7 +15515,7 @@ Epoch 00100: val_loss did not improve from 0.32395
 
 <div class="jp-OutputArea-child">
 
-    
+
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
@@ -15531,7 +15531,7 @@ Epoch 00100: val_loss did not improve from 0.32395
 
 <div class="jp-OutputArea-child">
 
-    
+
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
@@ -15547,7 +15547,7 @@ Epoch 00100: val_loss did not improve from 0.32395
 
 <div class="jp-OutputArea-child">
 
-    
+
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
@@ -15595,7 +15595,7 @@ Epoch 00100: val_loss did not improve from 0.32395
 
 <div class="jp-OutputArea-child">
 
-    
+
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
@@ -15646,7 +15646,7 @@ Done. View your TensorBoard at https://tensorboard.dev/experiment/BNDVnxmnRomRKp
 
 <div class="jp-OutputArea-child">
 
-    
+
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
@@ -15704,8 +15704,8 @@ Done. View your TensorBoard at https://tensorboard.dev/experiment/BNDVnxmnRomRKp
 <p><img src="images/loss_curves_autoencoder_100images_100epochs.png" alt="Courbes de loss pour 100 images et 100 epochs"></p>
 <p>Dans un second temps, nous avons entrainer notre modèle avec un dataset de taille 200 et 100 epochs. Les courbes de loss pour l'entrainement et la test sont beaucoup plus lisses avec un minimum à 0.2020 pour la validation.</p>
 <p><img src="images/loss_curves_autoencoder_200images_100epochs.png" alt="Courbes de loss pour 100 images et 100 epochs"></p>
-<p>Enfin nous avons décider de réduire le nombre d'epochs à 40 ainsi que d'augmenter la taille du dataset à 400.
-<img src="images/autoencoder_40epochs_400images.png" alt="Courbes de loss pour 100 images et 100 epochs">
+<p>Enfin nous avons décider de réduire le nombre d'epochs à 40 ainsi que d'augmenter la taille du dataset à 400.</p>
+<img src="images/autoencoder_40epochs_400images.png" alt="Courbes de loss pour 100 images et 100 epochs"><br>
 Ce dernier modèle nous présente les résultats les plus probants avec la courbe de perte la plus lisse.</p>
 
 </div>
