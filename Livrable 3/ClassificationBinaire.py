@@ -70,7 +70,7 @@ class ClassificationBinaire(tf.keras.Model):
     def load_model(self):
         self.model_multiple_layers.load_weights("./model_valid/mulitple_layer_model.5.h5")
 
-    # TO DO mettre le bon checkpoint dans L3
+    # TO DO mettre le bon checkpoint.old dans L3
 
     def compile_model(self):
         self.model_multiple_layers.compile(optimizer='adam',
