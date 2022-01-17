@@ -11,7 +11,7 @@ class ClassificationBinaire(tf.keras.Model):
         super(ClassificationBinaire, self).__init__()
         self.validation_set = None
         self.train_set = None
-        self.dataset()
+        self.dataset(image_h, image_w)
         data_augmentation = keras.Sequential(
             [
                 layers.experimental.preprocessing.RandomFlip("horizontal",
@@ -37,9 +37,7 @@ class ClassificationBinaire(tf.keras.Model):
             layers.Dense(num_classes)
         ])
 
-    def dataset(self):
-        image_h = 180
-        image_w = 180
+    def dataset(self, image_h, image_w):
         batch_s = 32
 
         data_dir = configuration.data_dir

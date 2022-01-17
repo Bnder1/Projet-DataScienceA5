@@ -5,6 +5,7 @@ import configuration
 import os
 import cv2
 import numpy as np
+
 data_dir = configuration.data_dir
 
 
@@ -15,7 +16,6 @@ class Denoising(tf.keras.Model):
         super(Denoising, self).__init__()
         self.inputs = None
         self.Model = None
-
 
     def build_autoencoder(self, height, width, depth, filters=(32, 64)):
         # initialize the input shape to be "channels last" along with
@@ -94,11 +94,15 @@ class Denoising(tf.keras.Model):
         self.Model.compile(optimizer="adam", loss='binary_crossentropy')
 
     def load_model(self):
-        self.Model.load_weights("./model_valid/autoencoder.5.h5")
+        self.Model.load_weights("./model_valid/autoencoder.h5")
 
     def summary_model(self):
         print(self.Model.summary())
 
-    def predict(self, img):
-        decoded_imgs = self.Model.predict(tf.convert_to_tensor(img, dtype=tf.float32))
-        return decoded_imgs
+    def predict(self, img, image_h, image_w):
+        noisy_img = cv2.imread(img)
+        noisy_img = cv2.resize(noisy_img, (image_h, image_w))
+        noisy_img = noisy_img.astype('float32') / 255.
+
+        decoded_img = self.Model.predict(tf.convert_to_tensor([noisy_img], dtype=tf.float32))
+        return decoded_img
