@@ -56,7 +56,9 @@ class Denoising(tf.keras.Model):
         clean_set = []
         noisy_set = []
         # we are loading only 100 image to speed up the process
-        for file in os.listdir(data_dir + "/clean")[:100]:
+        clean_files=os.listdir(data_dir+"/clean")
+        random.shuffle(clean_files)
+        for file in clean_files[:200]:
             ext = os.path.splitext(file)[1]
             if ext.lower() not in valid_images or not os.path.isfile(os.path.join(data_dir + "/noise", file)):
                 continue
@@ -71,24 +73,11 @@ class Denoising(tf.keras.Model):
             noisy_set.append(noisy_img)
         clean_set = np.array(clean_set, dtype=object)
         noisy_set = np.array(noisy_set, dtype=object)
-        (clean_set, noisy_set) = self.shuffle_in_unison(clean_set, noisy_set)
 
         split_index = int(noisy_set.shape[0] * (1 - validation_threshold))
 
         (clean_train_set, clean_test_set) = np.split(clean_set, [split_index])
         (noisy_train_set, noisy_test_set) = np.split(noisy_set, [split_index])
-
-        # shuffle_in_unison can shuffle two array and keep index relations
-
-    def shuffle_in_unison(a, b):
-        assert len(a) == len(b)
-        shuffled_a = np.empty(a.shape, dtype=a.dtype)
-        shuffled_b = np.empty(b.shape, dtype=b.dtype)
-        permutation = np.random.permutation(len(a))
-        for old_index, new_index in enumerate(permutation):
-            shuffled_a[new_index] = a[old_index]
-            shuffled_b[new_index] = b[old_index]
-        return shuffled_a, shuffled_b
 
     def compile_model(self):
         self.Model.compile(optimizer="adam", loss='binary_crossentropy')
